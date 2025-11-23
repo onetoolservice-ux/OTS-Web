@@ -1,62 +1,41 @@
-"use client";
-import { useState, useEffect } from "react";
-import MobileMenu from "./MobileMenu";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
-  const [dark, setDark] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const saved = typeof window !== 'undefined' && localStorage.getItem("theme");
-    if (saved === "dark") {
-      setDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const v = !dark;
-    setDark(v);
-    if (v) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", v ? "dark" : "light");
-  };
-
   return (
-    <>
-      <header className="w-full bg-white dark:bg-transparent/20 border-b border-transparent dark:border-neutral-700/20">
-        <div className="container-max flex items-center justify-between h-16">
-          <div className="flex items-center gap-4">
-            <button onClick={() => setOpen(true)} aria-label="menu" className="text-2xl md:hidden">☰</button>
-
-            <Link href="/" className="flex items-center gap-3">
-              <img src="/logo.svg" alt="One Tool" width="40" height="40" className="rounded-md" />
-              <div>
-                <div className="font-semibold text-gray-900 dark:text-white">One Tool</div>
-                <div className="text-xs text-gray-500 dark:text-gray-300">Solutions</div>
-              </div>
-            </Link>
-          </div>
-
-          <nav className="hidden md:flex gap-6 items-center">
-            <Link href="/" className="text-sm text-gray-700 dark:text-gray-200">Home</Link>
-            <Link href="/ai" className="text-sm text-gray-700 dark:text-gray-200">AI</Link>
-            <Link href="/tools" className="text-sm text-gray-700 dark:text-gray-200">Tools</Link>
-            <Link href="/learn" className="text-sm text-gray-700 dark:text-gray-200">Learn</Link>
-            <Link href="/about" className="text-sm text-gray-700 dark:text-gray-200">About</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Link href="/contact" className="hidden md:inline text-sm px-3 py-1 rounded-md border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-gray-200">Contact</Link>
-            <button onClick={toggleTheme} aria-label="toggle-theme" className="px-3 py-1 rounded-md bg-gray-100 dark:bg-neutral-800">
-              {dark ? "☀️" : "🌙"}
-            </button>
+    <header className="bg-white dark:bg-slate-900 shadow-sm">
+      <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center font-bold text-white">OT</div>
+          <div>
+            <Link href="/"><a className="font-bold text-lg">One Tool</a></Link>
+            <div className="text-xs opacity-60">Tools & Utilities</div>
           </div>
         </div>
-      </header>
 
-      <MobileMenu open={open} setOpen={setOpen} />
-    </>
+        <nav className="hidden md:flex items-center gap-6">
+          <Link href="/tools"><a className="hover:underline">Tools</a></Link>
+          <Link href="/ai"><a className="hover:underline">AI</a></Link>
+          <Link href="/about"><a className="hover:underline">About</a></Link>
+          <Link href="/contact"><a className="hover:underline">Contact</a></Link>
+          <Link href="/admin/tools"><a className="hover:underline">Admin</a></Link>
+        </nav>
+
+        <div className="md:hidden">
+          <button onClick={() => setOpen(!open)} aria-label="menu">☰</button>
+        </div>
+      </div>
+
+      {open && (
+        <div className="md:hidden bg-white p-4 border-t">
+          <Link href="/tools"><a className="block py-2">Tools</a></Link>
+          <Link href="/ai"><a className="block py-2">AI</a></Link>
+          <Link href="/about"><a className="block py-2">About</a></Link>
+          <Link href="/contact"><a className="block py-2">Contact</a></Link>
+          <Link href="/admin/tools"><a className="block py-2">Admin</a></Link>
+        </div>
+      )}
+    </header>
   );
 }
