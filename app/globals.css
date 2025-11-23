@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --accent1: #0b5ed7;
+  --accent2: #06c2d0;
+}
+html.dark { background: #07121a; color: #e9f0f6; }
+body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; }

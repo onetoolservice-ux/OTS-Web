@@ -1,0 +1,1 @@
+export default function Page(){ return (<section><div className='rounded-xl bg-white shadow-md p-6'><h2 className='text-2xl font-bold mb-2'>Support</h2><p className='text-slate-600'>Content placeholder for support page.</p></div></section>) }
