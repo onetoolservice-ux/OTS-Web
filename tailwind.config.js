@@ -1,5 +1,18 @@
 module.exports = {
-  content: ['./app/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,jsx,ts,tsx}'],
-  theme: { extend: {} },
+  content: [
+    "./app/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}"
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          blue: "#0154b5",
+          teal: "#00a6c8"
+        }
+      }
+    }
+  },
   plugins: [],
-}
+};

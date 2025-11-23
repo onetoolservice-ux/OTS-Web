@@ -1,1 +1,8 @@
-export default function Page(){ return (<section><div className='rounded-xl bg-white shadow-md p-6'><h2 className='text-2xl font-bold mb-2'>Privacy</h2><p className='text-slate-600'>Content placeholder for privacy page.</p></div></section>) }
+export default function Privacy() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Privacy Policy</h1>
+      <p className="mt-3">We respect your privacy. No unnecessary data is collected.</p>
+    </div>
+  );
+}

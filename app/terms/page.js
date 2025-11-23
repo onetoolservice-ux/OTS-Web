@@ -1,1 +1,8 @@
-export default function Page(){ return (<section><div className='rounded-xl bg-white shadow-md p-6'><h2 className='text-2xl font-bold mb-2'>Terms</h2><p className='text-slate-600'>Content placeholder for terms page.</p></div></section>) }
+export default function Terms() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Terms & Conditions</h1>
+      <p className="mt-3">Use the platform responsibly.</p>
+    </div>
+  );
+}

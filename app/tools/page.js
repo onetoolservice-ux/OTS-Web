@@ -1,1 +1,8 @@
-export default function Page(){ return (<section><div className='rounded-xl bg-white shadow-md p-6'><h2 className='text-2xl font-bold mb-2'>Tools</h2><p className='text-slate-600'>Content placeholder for tools page.</p></div></section>) }
+export default function Tools() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Tools</h1>
+      <p className="mt-3">Tools coming soon…</p>
+    </div>
+  );
+}

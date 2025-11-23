@@ -1,1 +1,10 @@
-export default function Page(){ return (<section><div className='rounded-xl bg-white shadow-md p-6'><h2 className='text-2xl font-bold mb-2'>About</h2><p className='text-slate-600'>Content placeholder for about page.</p></div></section>) }
+export default function About() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">About One Tool</h1>
+      <p className="mt-4">
+        One Tool Solutions helps people study, work, and live smarter with AI.
+      </p>
+    </div>
+  );
+}
