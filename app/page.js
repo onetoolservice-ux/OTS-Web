@@ -1,47 +1,38 @@
-import ToolCard from "../components/ToolCard";
-
-const FEATURE_TOOLS = [
-      { slug: "budget-tracker", name: "Budget Tracker", desc: "Track income, expenses & insights" },
-        { slug: "logo-maker", name: "AI Logo Maker", desc: "Generate brand logos quickly" },
-          { slug: "screenshot-reader", name: "Screenshot → Text", desc: "Extract text from images" },
-];
-
 export default function Home() {
-      return (
-            <div className="container">
-                  <section className="mb-8">
-                          <div className="flex items-center justify-between">
-                                    <div>
-                                                <h1 className="text-4xl font-bold">One Tool — Everything in one place</h1>
-                                                            <p className="text-gray-600 mt-2">A smart, modular platform of productivity tools and AI utilities.</p>
-                                                                      </div>
-                                                                              </div>
-                                                                                    </section>
+  return (
+    <main>
+      {/* HERO */}
+      <section className="bg-white rounded-xl shadow-sm p-8 mb-8 border">
+        <div className="flex flex-col md:flex-row items-center gap-6">
+          <div className="flex-1">
+            <h1 className="text-3xl font-bold text-slate-900">One Tool — Your daily AI companion</h1>
+            <p className="mt-3 text-slate-600 max-w-xl">
+              Smart, simple tools that help students, creators, and professionals work faster.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a href="/ai" className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg">Ask OTS AI</a>
+              <a href="/tools" className="inline-block px-4 py-2 border border-slate-200 rounded-lg">Explore Tools</a>
+            </div>
+          </div>
+          <div className="w-48 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow" />
+        </div>
+      </section>
 
-                                                                                          <section>
-                                                                                                  <h2 className="text-2xl font-semibold mb-4">Featured Tools</h2>
-                                                                                                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                                                                                                    {FEATURE_TOOLS.map((t) => <ToolCard key={t.slug} tool={t} />)}
-                                                                                                                            </div>
-                                                                                                                                  </section>
-
-                                                                                                                                        <section className="mt-10">
-                                                                                                                                                <h2 className="text-2xl font-semibold mb-4">Why One Tool?</h2>
-                                                                                                                                                        <div className="grid md:grid-cols-3 gap-4">
-                                                                                                                                                                  <div className="card">
-                                                                                                                                                                              <h3 className="font-semibold">Save time</h3>
-                                                                                                                                                                                          <p className="text-gray-500 text-sm mt-2">All essential utilities in one place.</p>
-                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                              <div className="card">
-                                                                                                                                                                                                                          <h3 className="font-semibold">Easy to use</h3>
-                                                                                                                                                                                                                                      <p className="text-gray-500 text-sm mt-2">Minimal setup, instant results.</p>
-                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                          <div className="card">
-                                                                                                                                                                                                                                                                      <h3 className="font-semibold">Privacy first</h3>
-                                                                                                                                                                                                                                                                                  <p className="text-gray-500 text-sm mt-2">Most data stays on-device by default.</p>
-                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                          </section>
-                                                                                                                                                                                                                                                                                                              </div>
-      );
+      {/* FEATURE CARDS */}
+      <section className="grid md:grid-cols-3 gap-6">
+        <div className="p-6 bg-white rounded-lg border shadow-sm">
+          <h3 className="font-semibold">Study Smarter</h3>
+          <p className="mt-2 text-slate-600 text-sm">Summarize notes, create plans and track progress.</p>
+        </div>
+        <div className="p-6 bg-white rounded-lg border shadow-sm">
+          <h3 className="font-semibold">Work Faster</h3>
+          <p className="mt-2 text-slate-600 text-sm">Resume builder, email drafts, and quick utilities.</p>
+        </div>
+        <div className="p-6 bg-white rounded-lg border shadow-sm">
+          <h3 className="font-semibold">AI Assistant</h3>
+          <p className="mt-2 text-slate-600 text-sm">Ask questions, generate content, and learn faster.</p>
+        </div>
+      </section>
+    </main>
+  );
 }

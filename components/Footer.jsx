@@ -1,7 +1,9 @@
 export default function Footer() {
-      return (
-            <footer className="py-8 text-center border-t text-gray-500">
-                  © {new Date().getFullYear()} One Tool Solutions · All Rights Reserved
-            </footer>
-      );
+  return (
+    <footer className="mt-12 border-t bg-white">
+      <div className="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-slate-500">
+        © {new Date().getFullYear()} One Tool Solutions (OTS) · Built with ♥
+      </div>
+    </footer>
+  );
 }
